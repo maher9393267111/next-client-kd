@@ -2,6 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import Title from '../components/Title';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 const Register = () => {
 
 
@@ -13,8 +14,23 @@ const Register = () => {
       e.preventDefault();
       console.table({ name, email, password });
 
-      axios.post('http://localhost:8000/api/register', { name, email, password })
+// process.env.NEXT_PUBLIC_API}
+
+      axios.post(`api/register`, { name, email, password }).then(res => {
+        console.log(res);
+        toast.success(`${res.data.message}`);
+      }
+      ).catch(err => {
+        console.log(err);
+        toast.error("Error");
+      }
+      )
     };
+
+
+  
+
+
 
 
 
@@ -58,7 +74,19 @@ Register page
           <button type="submit" className="btn btn-block btn-primary">
             Submit
           </button>
+
+          
         </form>
+      
+<div>
+
+{/* <img
+className='  w-8 h-8'
+src="https://cdn1.iconfinder.com/data/icons/devices-gaming-solid/24/loading-spinner-solid-256.png" alt="" /> */}
+
+</div>
+
+
       </div>
 
 
