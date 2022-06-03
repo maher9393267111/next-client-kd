@@ -79,6 +79,7 @@ Register page
         </form>
       
 <div>
+ 
 
 {/* <img
 className='  w-8 h-8'
