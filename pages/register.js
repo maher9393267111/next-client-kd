@@ -2,6 +2,7 @@ import React from 'react';
 import {useState,useEffect,useContext} from 'react';
 import Title from '../components/Title';
 import axios from 'axios';
+import { Context } from "../context";
 import { toast } from 'react-toastify';
 const Register = () => {
 
