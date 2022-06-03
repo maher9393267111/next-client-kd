@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState,useEffect,useContext} from 'react';
 import Title from '../components/Title';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -10,6 +10,17 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
+
+    const {
+      state: { user },
+    } = useContext(Context);
+
+
+    useEffect(() => {
+      if (user !== null) router.push("/");
+    }, [user]);
+
+
     const handleSubmit = (e) => {
       e.preventDefault();
       console.table({ name, email, password });
