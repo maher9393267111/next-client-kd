@@ -36,10 +36,10 @@ const Login = () => {
 
       dispatch({
         type: "LOGIN",
-        payload: data,
+        payload: data.user,
       });
       // save in local storage
-      window.localStorage.setItem("user", JSON.stringify(data));
+      window.localStorage.setItem("user", JSON.stringify(data.user));
       // redirect
       router.push("/");
 
