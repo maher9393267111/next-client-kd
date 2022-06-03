@@ -77,6 +77,7 @@ const Provider = ({ children }) => {
       axios.defaults.headers["X-CSRF-Token"] = data.getCsrfToken;
     };
     getCsrfToken();
+    // response is csrf {{Csrf Token}} from server when make get request to /api/csrf-token  -------->> csrfToken: "PxcujyKs-lUicho64tfbRmhr--QfxF0hAANY"
   }, []);
 
 
